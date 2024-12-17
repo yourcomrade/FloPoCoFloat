@@ -152,7 +152,6 @@ library
 
     -- Modules exported by the library.
     exposed-modules:  FPFloat,
-                      FPFloatX,
                        Data.Number.MPFR.FFIhelper,
                        Data.Number.MPFR.Internal,
                        Data.Number.MPFR.Mutable.Internal,
