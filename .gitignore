@@ -3,3 +3,6 @@ src/*.o
 src/*.hi
 .ghc*
 *.hs
+vhdl/*
+verilog/*
+systemverilog/*
