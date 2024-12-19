@@ -39,7 +39,7 @@ author:             yourcomrade
 
 -- An email address to which users can send suggestions, bug reports, and patches.
 maintainer:         MinhXecole@gmail.com
-description: 
+description:
 --This is the Clash library support for floating point number used by FloPoCo. It uses hmpfr version 0.4.5 which is the haskell binding
 --library for MPFR  which is the same floating point library used by FloPoCo. Currently, there is a build problem with hmpfr 0.4.5 with ghc 9.4.4 and above,
 --so all of the haskell files and c files are hard copied from the source. Link to the hmpfr: https://github.com/michalkonecny/hmpfr/tree/master
@@ -121,11 +121,10 @@ common common-options
     -fno-unbox-small-strict-fields
     -fno-unbox-strict-fields
     -ddump-splices
-    -fno-warn-orphans 
-    -optl-static
+    -fno-warn-orphans
     -optc-U_FORTIFY_SOURCE
     -optc-fno-stack-protector
-    
+
   build-depends:
     base,
     Cabal,
@@ -145,7 +144,7 @@ common common-options
     ghc-typelits-extra,
     ghc-typelits-knownnat
 
-    
+
 library
     -- Import common warning flags.
     import:           common-options
@@ -198,9 +197,9 @@ library
 
     -- Base language which the package is written in.
     default-language: Haskell2010
-    
-    include-dirs:        C:\ghcup\msys64\clang64\include 
-    extra-lib-dirs:      C:\ghcup\msys64\clang64\lib 
+    if os(windows)
+        include-dirs:        C:\ghcup\msys64\clang64\include
+        extra-lib-dirs:      C:\ghcup\msys64\clang64\lib
     extra-libraries:     mpfr gmp
 
 executable clash
@@ -227,7 +226,7 @@ executable clash
     -- Base language which the package is written in.
     default-language: Haskell2010
     ghc-options: -optc-fno-stack-protector  -optc-U_FORTIFY_SOURCE
-    
+
 
 
 executable clashi
@@ -255,7 +254,7 @@ executable clashi
     -- Base language which the package is written in.
     default-language: Haskell2010
     ghc-options: -optc-fno-stack-protector  -optc-U_FORTIFY_SOURCE
-    
+
 
 test-suite FloPoCoFloat-test
     -- Import common warning flags.
