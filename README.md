@@ -4,7 +4,12 @@ This library provides Clash support for floating-point numbers as used by FloPoC
 
 ## Compatibility Note
 
-Currently, version 0.4.5 of **hmpfr** has build errors when using **GHC 9.4.4** and above. This is because GHC 9.4.4 and newer versions in Window use the **Clang** toolchain instead of **GCC**. To use this library, you must ensure that **MPFR** and **GMP** libraries are built with **Clang** in Window. For linux, **ghc 9.8.2** still uses **GCC**
+Currently, version 0.4.5 of **hmpfr** has build errors when using **GHC 9.4.4** and above. This is because GHC 9.4.4 and newer versions in Window use the **Clang** toolchain instead of **GCC**. To use this library, you must ensure that **MPFR** and **GMP** libraries are built with **Clang** in Window. The
+easiest is to msys2 with these commands:
+```bash
+pacman -S mingw-w64-clang-x86_64-mpfr
+```
+.For linux, **ghc 9.8.2** still uses **GCC**
 
 ## Key Changes in MPFR Usage
 
