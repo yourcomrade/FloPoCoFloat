@@ -29,6 +29,7 @@ Currently, there is a linking error with the shared MPFR library when user uses 
 ```haskell
 ta = $(lift (1.2 :: FoFloat 4 11 M.Near))
 ```
+This issues has been discussed in the [ghc-dev mailing list](https://mail.haskell.org/pipermail/ghc-devs/2024-December/021887.html) and the [cabal issue](https://github.com/haskell/cabal/issues/10651).  
 However, if users run ghci and then load the Haskell file containing the usage of the lift instance with FoFloat type, it will not create any error. Therefore, a temporary solution for users who like to use Clash testbench framework with FoFloat is to load the that Haskell file in the clashi environment. Users can run clashi via the command
 ```bash
 cabal run -- clashi -fclash-clear
