@@ -1,0 +1,10 @@
+dist-newstyle/*
+src/*.o
+src/*.hi
+.ghc*
+*.vhdl
+.vscode/*
+vhdl/*
+vhdl_old/*
+verilog/*
+systemverilog/*
